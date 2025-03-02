@@ -1,0 +1,127 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        h1{
+            color: white;
+            text-align: center;
+        }
+        h3{
+            color: white;
+            text-align: center;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('background.webp'); 
+            background-color: #e0e0e0; /* Light gray background color */
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #33333300;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .gallery-container {
+            background-color: rgba(255, 255, 255, 0.418); /* Semi-transparent white background */
+            padding: 20px; /* Padding around the gallery */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+</style>
+</head>
+<body>
+    <nav>
+        <a href="Map.html">Home</a>
+        <a href="index.html">About</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="VideoTN.html">Video</a>
+        <a href="AudioTN.html">Audio</a>
+        <a href="LocationTN.html">Location</a>
+    </nav>
+    <div class="gallery-container">
+        <h1>Virtual Tour!</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1740855484313!6m8!1m7!1sCAoSLEFGMVFpcFBwZzl5dEFrYXV0WHdrNVVFaTljMDBOMG5DOUZncmk5ZndwaFJw!2m2!1d9.91943789185303!2d78.1183518658142!3f69.11070224096464!4f8.291812994648637!5f0.7820865974627469" width="1100" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <br><br>
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1740855013611!6m8!1m7!1sCAoSLEFGMVFpcFB6R193TkFzYXZXUEtJVS1qbTFIb1FlemZMektrSElENmRoMGRX!2m2!1d9.918750599320106!2d78.11968556281407!3f348.35604065782775!4f-5.980968436220607!5f0.7820865974627469" width="1100" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <br><br>
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1740855580758!6m8!1m7!1sCAoSLEFGMVFpcFBFTGoxVEQwY1h1d1ZtNWdqMjRvTGhwX3FPclpRZEVxTFF1bkhu!2m2!1d9.919294094215932!2d78.11752311527309!3f349.2043310160679!4f-11.036320481330776!5f0.7820865974627469" width="1100" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <script src='https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js'></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    window.AgentInitializer.init({
+      agentRenderURL: "https://agent.jotform.com/01954d5c8cf57a97af8ecd34a23be002ac1d",
+      rootId: "JotformAgent-01954d5c8cf57a97af8ecd34a23be002ac1d",
+      formID: "01954d5c8cf57a97af8ecd34a23be002ac1d",
+      queryParams: ["skipWelcome=1", "maximizable=1"],
+      domain: "https://www.jotform.com",
+      isDraggable: false,
+      background: "linear-gradient(180deg, #6a906d 0%, #3f614f 100%)",
+      buttonBackgroundColor: "#0066C3",
+      buttonIconColor: "#FFFFFF",
+      variant: false,
+      customizations: {
+        "greeting": "Yes",
+        "greetingMessage": "Hi! How can I assist you?",
+        "pulse": "Yes",
+        "position": "right",
+        "autoOpenChatIn": "0"
+      },
+      isVoice: undefined
+    });
+  });
+</script>
+    <footer>
+        <div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","wrapper_selector":".gtranslate_wrapper","horizontal_position":"left","vertical_position":"bottom"}</script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+        <script>if ("speechSynthesis" in window) {
+            let utterance = null;
+          
+            function readSelectedText() {
+              let selectedText = window.getSelection().toString();
+              if (selectedText.length > 0) {
+                utterance = new SpeechSynthesisUtterance(selectedText);
+                utterance.rate = 0.8;
+                window.speechSynthesis.speak(utterance);
+              }
+            }
+          
+            function stopSpeaking() {
+              if (utterance) {
+                window.speechSynthesis.cancel();
+              }
+            }
+          
+            document.addEventListener("mouseup", readSelectedText);
+            document.addEventListener("click", function (event) {
+              let selectedText = window.getSelection().toString();
+              if (!selectedText && event.target !== document) {
+                stopSpeaking();
+              }
+            });
+          } else {
+            console.log("not supported");
+          }</script>
+          <h3>Om Sri Matre Namaha!
+        </h3>
+    </footer>
+</body>
+<script type="module" src="script.js"></script>
+</html>
