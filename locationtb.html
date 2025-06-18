@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        h1{
+            color: white;
+            text-align: center;
+        }
+        h3{
+            color: white;
+            text-align: center;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('bg.webp'); 
+            background-color: #e0e0e0; /* Light gray background color */
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color:  #284531;
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: rgb(233, 240, 232);
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .gallery-container {
+            background-color: rgba(52, 91, 62, 0.486); /* Semi-transparent white background */
+            padding: 60px; /* Padding around the gallery */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+</style>
+</head>
+<body>
+    <nav>
+        <a href="Map.html">Home</a>
+        <a href="Tirupati.html">About</a>
+        <a href="gallerytb.html">Gallery</a>
+        <a href="Videotb.html">Video</a>
+        <a href="Audiotb.html">Audio</a>
+        <a href="Locationtb.html">Location</a>
+    </nav>
+    <div class="gallery-container">
+        <h1>Location</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.580399256078!2d79.34727939999999!3d13.683259699999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb2b562a5cc709b%3A0x407a00bd52587d32!2sSri%20Venkateswara%20Swamy%20Temple%20(Tirumala%20Tirupathi%20Devasthanam)!5e0!3m2!1sen!2sin!4v1749637332305!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>">
+        <script src='https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js'></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    window.AgentInitializer.init({
+      agentRenderURL: "https://agent.jotform.com/01954d5c8cf57a97af8ecd34a23be002ac1d",
+      rootId: "JotformAgent-01954d5c8cf57a97af8ecd34a23be002ac1d",
+      formID: "01954d5c8cf57a97af8ecd34a23be002ac1d",
+      queryParams: ["skipWelcome=1", "maximizable=1"],
+      domain: "https://www.jotform.com",
+      isDraggable: false,
+      background: "linear-gradient(180deg, #6a906d 0%, #3f614f 100%)",
+      buttonBackgroundColor: "#0066C3",
+      buttonIconColor: "#FFFFFF",
+      variant: false,
+      customizations: {
+        "greeting": "Yes",
+        "greetingMessage": "Hi! How can I assist you?",
+        "pulse": "Yes",
+        "position": "right",
+        "autoOpenChatIn": "0"
+      },
+      isVoice: undefined
+    });
+  });
+</script>
+    <footer>
+        <div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","wrapper_selector":".gtranslate_wrapper","horizontal_position":"left","vertical_position":"bottom"}</script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+        <script>if ("speechSynthesis" in window) {
+            let utterance = null;
+          
+            function readSelectedText() {
+              let selectedText = window.getSelection().toString();
+              if (selectedText.length > 0) {
+                utterance = new SpeechSynthesisUtterance(selectedText);
+                utterance.rate = 0.8;
+                window.speechSynthesis.speak(utterance);
+              }
+            }
+          
+            function stopSpeaking() {
+              if (utterance) {
+                window.speechSynthesis.cancel();
+              }
+            }
+          
+            document.addEventListener("mouseup", readSelectedText);
+            document.addEventListener("click", function (event) {
+              let selectedText = window.getSelection().toString();
+              if (!selectedText && event.target !== document) {
+                stopSpeaking();
+              }
+            });
+          } else {
+            console.log("not supported");
+          }</script>
+          <h3>Om Namo Venkatesaya!
+        </h3>
+    </footer>
+</body>
+<script type="module" src="script.js"></script>
+</html>
