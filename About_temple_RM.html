@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Ramanathaswamy Temple</title>
+    <!-- ... (Your existing CSS styles) ... -->
+     <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://www.savaari.com/blog/wp-content/uploads/2023/02/rameswaram-temple-1656167436_f2c551193bb7d4bc6f70-1.webp');
+     /* Path to your background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+}
+
+header {
+    text-align: center;
+    background-color: rgba(34, 33, 32, 0.664); /* Semi-transparent background for the header */
+    color: white;
+    padding: 10px 0;
+}
+P{
+    color: white;
+    font-size:x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+h1{
+    color: white;
+    font-size:xx-large;
+}
+h2{
+    color: white;
+}
+li{
+    color: white;
+}
+nav {
+    text-align: center; /* Center the navigation content */
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.content {
+    background-color: rgba(37, 36, 34, 0.836); /* Semi-transparent white background for the text area */
+    padding: 5px;
+    border-radius: 8px; /* Rounded corners */
+}
+.content1 {
+    background-color: rgb(44, 43, 40); /* Semi-transparent white background for the text area */
+    padding: 3px;
+    border-radius: 0px;/* Rounded corners */
+    width: 80%; /* Set a predefined width */
+    max-width: 1200px; /* Optional: limit max width */
+    margin: 0 auto;
+    margin-top: 10px; /* Center the layout */
+    display: flex; /* Flexbox for item alignment if needed */
+    justify-content: center;
+}
+
+.image-gallery {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(32, 32, 30, 0.884); /* Semi-transparent background for the footer */
+    color: white;
+}
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(26, 27, 26);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: rgb(255, 255, 255);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f15b;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="content1">
+        <nav>
+            <ul>
+                <li><a href="Homepage2.0.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="indexx.html">About</a>
+                  <div class="dropdown-content">
+                      <a href="indexx.html">About Rameswaram</a>
+                      <a href="About_temple_RM.html">About Ramanathaswamy Temple</a>
+                      <a href="About_templeRituals_RM.html">Rituals and Festivals of Ramanathaswamy Temple</a>
+                      <a href="Teerthams.html">22 Teerthams of Ramanathaswamy Temple</a>
+                  </div>
+              </li>
+                <li><a href="GalleryRM.html">Gallery</a></li>
+                <li><a href="VideoRM.html">Videos</a></li>
+                <li><a href="ARRM.html">Virtual Tour</a></li>
+                <li><a href="AudioRM.html">Audio</a></li>
+                <li><a href="LocationRM.html">Location</a></li>
+                <li class="dropdown">
+                    <a href="TripRM.html">Plan a trip!</a>
+                    <div class="dropdown-content">
+                        <a href="Rules_RM.html">Tips and Rules to Note</a>
+                        <a href="TripRM.html">How to reach/Transport</a>
+                        <a href="trawell.html">Other tourist attractions</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div><br>
+    <!-- Assuming this page is now about Madurai, let's update the header -->
+    <header>
+        <h1 >Rameswaram</h1> <!-- Added ID for the title -->
+    </header>
+
+
+    <main>
+      <!-- ... (Your existing marquee and image gallery) ... -->
+        <div class="content">
+            <section>
+                <h1><b>About Ramanathaswamy Temple</b></h1>
+                <!-- The main heading might also come from Firebase -->
+                 <p id="Rameswaram-temple1"></p> <!-- Added ID for section heading -->
+
+                 <!-- Placeholder for the first paragraph -->
+                <p id="Rameswaram-temple2"></p>
+                 <!-- Placeholder for the second paragraph -->
+                <p id="Rameswaram-temple3"></p>
+                <p id="Rameswaram-temple4"></p>
+
+                 <!-- You could add more placeholders for other data like facts, etc. -->
+
+            </section>
+            
+        </div>
+    </main>
+    <!-- ... (Your existing Jotform and GTranslate scripts) ... -->
+     <script src='https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js'></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    window.AgentInitializer.init({
+      agentRenderURL: "https://agent.jotform.com/01954d5c8cf57a97af8ecd34a23be002ac1d",
+      rootId: "JotformAgent-01954d5c8cf57a97af8ecd34a23be002ac1d",
+      formID: "01954d5c8cf57a97af8ecd34a23be002ac1d",
+      queryParams: ["skipWelcome=1", "maximizable=1"],
+      domain: "https://www.jotform.com",
+      isDraggable: false,
+      background: "linear-gradient(180deg, #6a906d 0%, #3f614f 100%)",
+      buttonBackgroundColor: "#0066C3",
+      buttonIconColor: "#FFFFFF",
+      variant: false,
+      customizations: {
+        "greeting": "Yes",
+        "greetingMessage": "Hi! How can I assist you?",
+        "pulse": "Yes",
+        "position": "right",
+        "autoOpenChatIn": "0"
+      },
+      isVoice: undefined
+    });
+  });
+</script>
+    <footer>
+        <div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","wrapper_selector":".gtranslate_wrapper","horizontal_position":"left","vertical_position":"bottom"}</script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+        <script>if ("speechSynthesis" in window) {
+            let utterance = null;
+
+            function readSelectedText() {
+              let selectedText = window.getSelection().toString();
+              if (selectedText.length > 0) {
+                utterance = new SpeechSynthesisUtterance(selectedText);
+                utterance.rate = 0.8;
+                window.speechSynthesis.speak(utterance);
+              }
+            }
+
+            function stopSpeaking() {
+              if (utterance) {
+                window.speechSynthesis.cancel();
+              }
+            }
+
+            document.addEventListener("mouseup", readSelectedText);
+            document.addEventListener("click", function (event) {
+              let selectedText = window.getSelection().toString();
+              if (!selectedText && event.target !== document) {
+                stopSpeaking();
+              }
+            });
+          } else {
+            console.log("not supported");
+          }</script>
+          <h3>Om Namaha Shivay!
+          </h3>
+    </footer>
+</body>
+<!-- Link your script AFTER the elements it needs to find -->
+<script type="module">
+    // script.js
+
+// 1. Your Firebase Project Configuration (Keep this section as you confirmed it's correct)
+const firebaseConfig = {
+    apiKey: "AIzaSyDsgc4mN1JVQGUejZQRlGrZdy4HkwVeCw4",
+    authDomain: "pilgrimagesofbharat.firebaseapp.com",
+    databaseURL: "https://pilgrimagesofbharat-default-rtdb.firebaseio.com",
+    projectId: "pilgrimagesofbharat",
+    storageBucket: "pilgrimagesofbharat.firebasestorage.app",
+    messagingSenderId: "773316089095",
+    appId: "1:773316089095:web:abd16879b82357961a21a2",
+    measurementId: "G-4RDPT4NDTD"
+};
+
+// 2. Initialize Firebase - Using the corrected full CDN import paths
+//    *** Ensure the version number matches the one in your index.html script tags! ***
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
+import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js";
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+// 3. Get references to ALL the HTML elements where you want to display data
+//    These IDs should match the ones you added in your HTML file
+const cityTitleElement = document.getElementById('city-title');
+const rameswaramtemple1Element = document.getElementById('Rameswaram-temple1');
+const rameswaramtemple2Element = document.getElementById('Rameswaram-temple2');
+const rameswaramtemple3Element = document.getElementById('Rameswaram-temple3');
+const rameswaramtemple4Element = document.getElementById('Rameswaram-temple4');
+const keyrmListElement = document.getElementById('key-rm-list'); // Assuming you have a <ul> with this ID
+
+
+// 4. Define a reference to the parent node containing all the data for "About Madurai"
+const aboutRameswaramtempleRef = ref(database, '/Rameswaram/About TempleRM');
+
+
+// 5. --- Listening for Realtime Changes to the ENTIRE 'About Madurai' Object ---
+//    When data is received (initially and on any change), the callback function runs.
+onValue(aboutRameswaramtempleRef, (snapshot) => {
+    // Check if data exists at the referenced path
+    if (snapshot.exists()) {
+        const rameswaramtempleData = snapshot.val(); // Get the entire object from this path
+        console.log("Data fetched for About Rameswaram:", rameswaramtempleData);
+
+        // Now, check if each HTML element exists and update it
+        // Access individual pieces of data from the maduraiData object using BRACKET NOTATION for numerical keys
+
+        if (rameswaramtemple1Element) {
+            // Access key '1' using bracket notation
+            rameswaramtemple1Element.innerHTML = rameswaramtempleData['1'] || 'Rameswaram'; // Corrected!
+        }
+
+        if (rameswaramtemple2Element) {
+             // Access key '2' using bracket notation
+             rameswaramtemple2Element.innerHTML = rameswaramtempleData['2'] || 'About Rameswaram Temple'; // Corrected!
+        }
+
+        if (rameswaramtemple3Element) {
+             // Access key '3' using bracket notation
+            rameswaramtemple3Element.innerHTML = rameswaramtempleData['3'] || 'Paragraph 3 not available.'; // Corrected!
+        }
+
+        if (rameswaramtemple4Element) {
+            // Access key '4' using bracket notation
+           rameswaramtemple4Element.innerHTML = rameswaramtempleData['4'] || 'Paragraph 4 not available.'; // Corrected!
+        }
+
+        if (keyrmListElement) {
+            // Assuming you have a nested object or array for 'keyFacts'
+            keyrmListElement.innerHTML = ''; // Clear the list first
+
+            // Make sure the key 'keyFacts' exists before trying to iterate
+            if (rameswaramtempleData.keyFacts && typeof rameswaramtempleData.keyFacts === 'object') {
+                 // Iterate through the keyFacts object and add list items
+                 // Object.entries works fine even if keys are numbers within the nested object
+                 Object.entries(rameswaramtempleData.keyFacts).forEach(([key, value]) => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${key}:</strong> ${value}`;
+                    keyrmListElement.appendChild(listItem);
+                 });
+            } else {
+                 keyrmListElement.innerHTML = '<li>Key facts not available.</li>';
+            }
+        }
+
+
+    } else {
+        // If no data exists at the path
+        console.log("No data available at /Rameswaram/About Rameswaram");
+        // Set all elements to a default "not available" state
+        if (cityTitleElement) cityTitleElement.innerHTML = 'Data Not Found';
+        if (sectionHeadingElement) sectionHeadingElement.innerHTML = 'Section Not Available';
+        if (rameswaramtemple1Element) rameswaramtemple1Element.innerHTML = 'Description data not found.';
+        if (rameswaramtemple2Element) rameswaramtemple2Element.innerHTML = ''; // Or a specific message
+         if (keyrmListElement) keyrmListElement.innerHTML = '<li>Facts data not found.</li>';
+    }
+
+}, (error) => {
+    // Handle any errors during the listening process
+    console.error("Error fetching data for About Madurai:", error);
+     // Set all elements to an error state
+    if (cityTitleElement) cityTitleElement.innerHTML = 'Error';
+    if (sectionHeadingElement) sectionHeadingElement.innerHTML = 'Error Loading';
+    if (rameswaramtemple1Element) rameswaramtemple1Element.innerHTML = 'Error loading description data.';
+    if (rameswaramtemple2Element) rameswaramtemple2Element.innerHTML = ''; // Or a specific message
+    if (keyrmListElement) keyrmListElement.innerHTML = '<li>Error loading facts.</li>';
+});
+
+
+console.log("Firebase script loaded and initialized for Rameswaram page.");
+// --- You would add other functions here if needed for interactive parts of this page ---
+// (e.g., functions for buttons, etc., using data fetched here or separate fetches)
+</script>
+</html>
