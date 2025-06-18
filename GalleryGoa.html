@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="GoaStyles.css">
+    <style>
+        h1{
+            color: white;
+            text-align: center;
+        }
+        h3{
+            color: white;
+            text-align: center;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('backgroundMD.jpg'); 
+            background-color: #e0e0e07e; /* Light gray background color */
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            background-color: #33333300;
+            width: 100%;
+            padding:0%;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .gallery-container {
+            background-color: rgba(62, 82, 59, 0.377); /* Semi-transparent white background */
+            padding: 20px; /* Padding around the gallery */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping to create rows */
+            justify-content: center; /* Center the images */
+            max-width: 1200px; /* Limit the width of the gallery */
+            margin-top: 20px;
+        }
+        .image-container {
+            position: relative;
+            margin: 10px;
+            border-radius: 5px;
+            overflow: hidden; /* Ensures the semi-transparent background doesn't overflow */
+            transition: transform 0.3s; /* Smooth transition for scaling */
+        }
+        img {
+            width: 200px; /* Set a fixed width */
+            height: 150px; /* Set a fixed height */
+            display: block; /* Ensures images are block elements */
+            transition: transform 0.3s; /* Smooth transition for scaling */
+        }
+        .image-container:hover img {
+            transform: scale(1.1); /* Scale up the image on hover */
+        }
+        .overlayz {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s; /* Smooth transition for hover effect */
+        }
+        .image-container:hover .overlay {
+            opacity: 1; /* Show overlay on hover */
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(62, 82, 59);
+            min-width: 160px;
+            padding: 0%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: rgb(255, 255, 255);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f15b;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="content1">  
+        <nav>
+            <ul>
+                 <li><a href="homepage.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="GoaIndex.html">About</a>
+                  <div class="dropdown-content">
+                      <a href="GoaIndex.html">About Goa</a>
+                      <a href="About_Church_Goa.html">About Goa Bom Jesus Church</a>
+                      <a href="About_ChurchRituals_Goa.html">Rituals and Festivals of Goa Bom Jesus Church</a>
+                  </div>
+              </li>
+                <li><a href="GalleryGoa.html">Gallery</a></li>
+                <li><a href="VideoGoa.html">Videos</a></li>
+                <li><a href="ARGoa.html">Virtual Tour</a></li>
+                <li><a href="AudioGoa.html">Audio</a></li>
+                <li><a href="LocationGoa.html">Location</a></li>
+                <li class="dropdown">
+                    <a href="TripGoa.html">Plan a trip!</a>
+                    <div class="dropdown-content">
+                        <a href="Rules_Goa.html">Tips and Rules to Note</a>
+                        <a href="TripGoa.html">How to reach/Transport</a>
+                        <a href="trawellGoa.html">Other tourist attractions</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div><br>
+    <div class="gallery-container">
+        <h1>Gallery</h1>
+        <div class="gallery">
+            <div class="image-container">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/d2/b8/5e/inside-chapel-main-altar.jpg"alt="Image 1" style="width: 500px; height: 300px;">
+                <div class="overlay"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://www.holidify.com/images/cmsuploads/compressed/shutterstock_1073481062_20190822145857.jpg" alt="Image 2"style="width: 500px; height: 300px;">
+                <div class="overlay"></div>
+            </div>
+                <div class="image-container">
+                <img src="https://media-cdn.tripadvisor.com/media/photo-o/1c/6d/50/87/caption.jpg" alt="Image 3"style="width: 500px; height:300px;">
+                <div class="overlay"></div>
+                </div>
+            <div class="image-container">
+                <img src="https://static.toiimg.com/photo/51874210/.jpg" alt="Image 5" style="width: 500px; height: 300px;">
+                <div class="overlay"></div>
+            </div>
+            <div class="image-container">
+                <img src="data:image/webp;base64,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" alt="Image 5" style="width: 500px; height: 300px;">
+                <div class="overlay"></div>
+            </div>
+            <div class="image-container">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.r7d1ioWTMWM3gtzCPqeY2QHaKk?r=0&pid=ImgDet&w=178&h=254&c=7&dpr=1.5&cb=idpwebp2&o=7&rm=3" alt="Image 6"style="width: 500px; height: 300px;">
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-embedded-agent.js'></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function() {
+    window.AgentInitializer.init({
+      agentRenderURL: "https://agent.jotform.com/01954d5c8cf57a97af8ecd34a23be002ac1d",
+      rootId: "JotformAgent-01954d5c8cf57a97af8ecd34a23be002ac1d",
+      formID: "01954d5c8cf57a97af8ecd34a23be002ac1d",
+      queryParams: ["skipWelcome=1", "maximizable=1"],
+      domain: "https://www.jotform.com",
+      isDraggable: false,
+      background: "linear-gradient(180deg, #6a906d 0%, #3f614f 100%)",
+      buttonBackgroundColor: "#0066C3",
+      buttonIconColor: "#FFFFFF",
+      variant: false,
+      customizations: {
+        "greeting": "Yes",
+        "greetingMessage": "Hi! How can I assist you?",
+        "pulse": "Yes",
+        "position": "right",
+        "autoOpenChatIn": "0"
+      },
+      isVoice: undefined
+    });
+  });
+</script>
+    <footer>
+        <div class="gtranslate_wrapper"></div>
+        <script>window.gtranslateSettings = {"default_language":"en","wrapper_selector":".gtranslate_wrapper","horizontal_position":"left","vertical_position":"bottom"}</script>
+        <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+        <script>if ("speechSynthesis" in window) {
+            let utterance = null;
+          
+            function readSelectedText() {
+              let selectedText = window.getSelection().toString();
+              if (selectedText.length > 0) {
+                utterance = new SpeechSynthesisUtterance(selectedText);
+                utterance.rate = 0.8;
+                window.speechSynthesis.speak(utterance);
+              }
+            }
+          
+            function stopSpeaking() {
+              if (utterance) {
+                window.speechSynthesis.cancel();
+              }
+            }
+          
+            document.addEventListener("mouseup", readSelectedText);
+            document.addEventListener("click", function (event) {
+              let selectedText = window.getSelection().toString();
+              if (!selectedText && event.target !== document) {
+                stopSpeaking();
+              }
+            });
+          } else {
+            console.log("not supported");
+          }</script>
+         
+    </footer>
+</body>
+<script type="module" src="script.js"></script>
+</html>
+               
