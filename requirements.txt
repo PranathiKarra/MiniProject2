@@ -1,0 +1,12 @@
+# requirements.txt
+flask
+langchain
+langchain-community
+transformers
+sentence-transformers
+faiss-cpu
+unstructured
+Pillow
+torch
+accelerate
+speechrecognition
