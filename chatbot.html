@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pilgrimage Chatbot</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+    }
+    .chat-window {
+      width: 100%;
+      max-width: 500px;
+      height: 600px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 2px solid #ff9245;
+    }
+    .chat-header {
+      background: linear-gradient(135deg, #ff9245, #ff7043);
+      padding: 15px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+    .chat-body {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    .chat-message {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 12px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+    .user-msg {
+      background: #e1f5fe;
+      align-self: flex-end;
+    }
+    .bot-msg {
+      background: #fff3e0;
+      align-self: flex-start;
+    }
+    .chat-footer {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      gap: 5px;
+      border-top: 1px solid #eee;
+    }
+    .chat-footer input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    .chat-footer button {
+      background: #ff9245;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-window">
+    <div class="chat-header">Pilgrimage Chatbot</div>
+    <div class="chat-body" id="chat"></div>
+    <div class="chat-footer">
+      <button id="mic">🎤</button>
+      <button id="upload-btn">📷</button>
+      <input type="text" id="question" placeholder="Ask about a temple...">
+      <button onclick="handleText(event)">➤</button>
+    </div>
+    <input type="file" id="image" onchange="handleImage(event)" />
+  </div>
+
+  <script>
+    function addMessage(sender, text) {
+      const chat = document.getElementById("chat");
+      const msg = document.createElement("div");
+      msg.className = `chat-message ${sender === 'You' ? 'user-msg' : 'bot-msg'}`;
+      msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+      chat.appendChild(msg);
+      chat.scrollTop = chat.scrollHeight;
+      if (sender === 'Bot') addTranslationOptions(msg, text);
+    }
+
+    async function handleText(e) {
+      e.preventDefault();
+      const questionInput = document.getElementById("question");
+      const question = questionInput.value.trim();
+      if (!question) return;
+      addMessage("You", question);
+
+      const res = await fetch("/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ question })
+      });
+
+      const data = await res.json();
+      const mapsLink = `<br><a href='https://www.google.com/maps/search/${encodeURIComponent(data.response)}' target='_blank'>📍 View on Google Maps</a>`;
+      addMessage("Bot", data.response + mapsLink);
+      questionInput.value = "";
+    }
+
+    async function handleImage(event) {
+      const file = event.target.files[0];
+      const formData = new FormData();
+      formData.append("image", file);
+      addMessage("You", "📷 Sent an image");
+
+      const res = await fetch("/upload", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await res.json();
+      const mapsLink = `<br><a href='https://www.google.com/maps/search/${encodeURIComponent(data.response)}' target='_blank'>📍 View on Google Maps</a>`;
+      addMessage("Bot", data.response + `<br><img src='${data.image_url}' width='100%'>` + mapsLink);
+    }
+
+    // 🎤 Voice Input
+    document.getElementById("mic").addEventListener("click", () => {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = "en-IN";
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+      recognition.start();
+
+      recognition.onresult = (event) => {
+        document.getElementById("question").value = event.results[0][0].transcript;
+      };
+
+      recognition.onerror = (err) => {
+        alert("Voice input failed: " + err.error);
+      };
+    });
+
+    // 🌍 Translation Options
+    async function translateText(text, targetLang) {
+      const res = await fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=en|${targetLang}`);
+      const data = await res.json();
+      return data.responseData.translatedText;
+    }
+
+    function addTranslationOptions(msgDiv, originalText) {
+      const selector = document.createElement("select");
+      selector.innerHTML = `
+        <option disabled selected>🌍 Translate</option>
+        <option value="hi">Hindi</option>
+        <option value="te">Telugu</option>
+      `;
+      selector.style.marginTop = "5px";
+      selector.onchange = async (e) => {
+        const translated = await translateText(originalText, e.target.value);
+        msgDiv.innerHTML = `<strong>Bot:</strong> ${translated}`;
+      };
+      msgDiv.appendChild(selector);
+    }
+  </script>
+</body>
+</html>
