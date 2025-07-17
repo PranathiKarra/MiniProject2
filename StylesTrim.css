@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('trim.webp');
+     /* Path to your background image */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+}
+
+header {
+    text-align: center; 
+    background-color: rgba(42, 83, 59, 0.692); /* Semi-transparent background for the header */
+    color: white;
+    padding: 10px 0;
+}
+P{
+    color: white;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+h1{
+    color: white;
+}
+h2{
+    color: white;
+}
+li{
+    color: white;
+}
+nav {
+    text-align: center; /* Center the navigation content */
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.content {
+    background-color: rgba(62, 82, 59, 0.829); /* Semi-transparent white background for the text area */
+    padding: 5px;
+    border-radius: 8px; /* Rounded corners */
+}
+.content1 {
+    background-color: rgba(62, 82, 59); /* Semi-transparent white background for the text area */
+    padding: 3px;
+    border-radius: 0px;/* Rounded corners */
+    width: 80%; /* Set a predefined width */
+    max-width: 1200px; /* Optional: limit max width */
+    margin: 0 auto;
+    margin-top: 10px; /* Center the layout */
+    display: flex; /* Flexbox for item alignment if needed */
+    justify-content: center;
+}
+
+.image-gallery {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto; 
+    display: inline-block;
+}
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(62, 82, 59, 0.829); /* Semi-transparent background for the footer */
+    color: white;
+} 
