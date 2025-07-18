@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festival Calendar</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #fef3c7, #fbcfe8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      overflow: hidden;
+      position: relative;
+      transition: background 1s ease;
+      min-height: 100vh;
+    }
+
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 20s infinite ease-in-out;
+      cursor: pointer;
+    }
+
+    .shape1 { width: 200px; height: 200px; background-color: #fcd34d; top: -50px; left: -50px; animation-delay: 0s; }
+    .shape2 { width: 150px; height: 150px; background-color: #a5f3fc; bottom: -50px; right: -50px; animation-delay: 5s; }
+    .shape3 { width: 100px; height: 100px; background-color: #c4b5fd; top: 50%; right: -50px; transform: translateY(-50%); animation-delay: 10s; }
+    .shape4 { width: 80px; height: 80px; background-color: #fca5a5; bottom: 20%; left: -40px; animation-delay: 15s; }
+    .shape5 { width: 120px; height: 120px; background-color: #86efac; top: 10%; right: -60px; animation-delay: 20s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, 30px) scale(1.1); }
+      100% { transform: translate(0, 0) scale(1); }
+    }
+
+    .calendar-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+      position: relative;
+      z-index: 1;
+      flex-wrap: nowrap;
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    .calendar-container {
+      flex: 1 1 60%;
+      min-width: 320px;
+      max-height: 500px;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+    .calendar-title { text-align: center; font-size: 2rem; color: #102a3b; margin-bottom: 15px; animation: slideDown 1s ease; }
+
+    @keyframes slideDown { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    .calendar-navigation { display: flex; justify-content: center; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+
+    .calendar-navigation button { background-color: #1f2e38c0; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem; transition: transform 0.2s, background-color 0.3s; }
+    .calendar-navigation button:hover { transform: scale(1.05); background-color: #042236e3; }
+
+    .calendar-table { width: 100%; border-collapse: collapse; animation: fadeIn 0.5s ease; }
+    .calendar-table.fade-out { animation: fadeOut 0.5s ease; }
+
+    @keyframes fadeOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.95); } }
+
+    .calendar-table th, .calendar-table td { width: 14.2%; padding: 10px; text-align: center; border: 1px solid #ddd; cursor: pointer; transition: background-color 0.3s, transform 0.2s; }
+    .calendar-table td:hover { background-color: #fcd34d; transform: scale(1.1); }
+    .festival-cell { background-color: #c4b5fd; color: white; }
+    .selected { border: 2px solid #ec4899; animation: pulse 0.5s ease; }
+
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+
+    .festival-details {
+      flex: 1 1 40%;
+      min-width: 250px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.5s ease;
+    }
+
+    @media (max-width: 900px) {
+      .calendar-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .calendar-container, .festival-details {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .calendar-table th, .calendar-table td { padding: 8px; font-size: 0.8rem; }
+      .calendar-navigation button { padding: 8px 16px; font-size: 0.9rem; }
+      .calendar-title { font-size: 1.5rem; }
+      .festival-details { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-shape shape1"></div>
+  <div class="floating-shape shape2"></div>
+  <div class="floating-shape shape3"></div>
+  <div class="floating-shape shape4"></div>
+  <div class="floating-shape shape5"></div>
+
+  <div class="calendar-wrapper">
+    <div class="calendar-container">
+      <a href="india_pilgrimage_map.html" style="display: inline-block; margin-bottom: 10px; background-color: #1f2e38c0; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s;">Back to Home</a>
+      <h1 class="calendar-title">Significant Events Calendar</h1>
+      <div class="calendar-navigation">
+        <button id="prev-month">Previous</button>
+        <h2 id="month-year"></h2>
+        <button id="next-month">Next</button>
+      </div>
+      <table class="calendar-table" id="calendar"></table>
+    </div>
+    <div class="festival-details" id="festival-details">
+      <p>Select a date to view festival details.</p>
+    </div>
+  </div>
+
+  <script>
+    const festivals = [
+      { name: 'Rath Yatra', date: '2025-06-27', description: 'Rath Yatra of Puri Jagannath.' },
+      { name: 'Sri Govindaraja Swamy Temple Brahmotsavam begins', date: '2025-06-2', description: 'This is a 9- day festival at the Tirupati Temple that features various special sevas.' },
+      { name: 'Sri Govindaraja Swamy Temple Brahmotsavam begins', date: '2025-06-10', description: 'The 9-day festivites come to an end.' },
+      { name: 'Sri Kapileswara Swamy Temple Brahmotsavam ends', date: '2025-02-19', description: 'The fesitivities begin with a traditional Ankurarpanam.' },
+      { name: 'Sri Kapileswara Swamy Temple Brahmotsavam ends', date: '2025-02-28', description: 'The fesitivities come to an end'},
+      { name: 'Srivari Brahmotsavam begins', date: '2025-09-24', description: 'This is the major annual brahmostavam at Thirumala.' },
+      { name: 'Sri Kapileswara Swamy Temple Brahmotsavam begins', date: '2025-10-02', description: 'The annual brahmostavam comes to an end.' },
+      { name: 'Meenakshi- Sundereshwar Thirukalyanam', date: '2025-04-24', description: 'The Chithirai festival, the most famous festival of Madurai, where the main event is the Wedding of goddess Meenakshi and god Sundereshwar' },
+      { name: 'Ganga Dussehra', date: '2025-06-05', description: 'Ganga Dussehra is a significant festival celebrated in Kashi, marking the day when the Ganges River is said to have descended from heaven.' },
+      { name: 'Mahashiv ratri', date: '2025-02-26', description: 'Maha Shiv Ratri is celebrated grandly across the country, especially at all the Jyotirlingas.' },
+      { name: 'Mahashiv ratri', date: '2026-02-15', description: 'Maha Shiv Ratri is celebrated grandly across the country, especially at all the Jyotirlingas.' },
+    ];
+
+    const calendar = document.getElementById('calendar');
+    const festivalDetails = document.getElementById('festival-details');
+    const monthYear = document.getElementById('month-year');
+
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+
+    const monthColors = [
+      '#fef3c7', '#fde68a', '#bbf7d0', '#a5f3fc',
+      '#d8b4fe', '#fbcfe8', '#fdba74', '#bfdbfe',
+      '#fca5a5', '#fdba74', '#a5b4fc', '#86efac'
+    ];
+
+    function formatDate(year, month, day) {
+      return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    }
+
+    function updateBackground() {
+      document.body.style.background = `linear-gradient(to right, ${monthColors[currentMonth]}, white)`;
+    }
+
+    function renderCalendar() {
+      updateBackground();
+
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      const startDay = new Date(currentYear, currentMonth, 1).getDay();
+
+      let html = '<thead><tr>';
+      ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].forEach(day => {
+        html += `<th>${day}</th>`;
+      });
+      html += '</tr></thead><tbody><tr>';
+
+      let dayCount = 1;
+
+      for (let i = 0; i < startDay; i++) {
+        html += '<td></td>';
+      }
+
+      for (let i = startDay; i < 7; i++) {
+        const date = formatDate(currentYear, currentMonth, dayCount);
+        const isFestival = festivals.find(f => f.date === date);
+        html += `<td class="${isFestival ? 'festival-cell' : ''}" data-date="${date}">${dayCount}</td>`;
+        dayCount++;
+      }
+      html += '</tr>';
+
+      while (dayCount <= daysInMonth) {
+        html += '<tr>';
+        for (let i = 0; i < 7 && dayCount <= daysInMonth; i++) {
+          const date = formatDate(currentYear, currentMonth, dayCount);
+          const isFestival = festivals.find(f => f.date === date);
+          html += `<td class="${isFestival ? 'festival-cell' : ''}" data-date="${date}">${dayCount}</td>`;
+          dayCount++;
+        }
+        html += '</tr>';
+      }
+      html += '</tbody>';
+      calendar.innerHTML = html;
+
+      monthYear.textContent = `${new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' })} ${currentYear}`;
+
+      document.querySelectorAll('td[data-date]').forEach(cell => {
+        cell.addEventListener('click', () => {
+          document.querySelectorAll('td').forEach(td => td.classList.remove('selected'));
+          cell.classList.add('selected');
+          showFestivalDetails(cell.getAttribute('data-date'));
+        });
+      });
+    }
+
+    function showFestivalDetails(date) {
+      const festival = festivals.find(f => f.date === date);
+      if (festival) {
+        festivalDetails.innerHTML = `
+          <h2>${festival.name}</h2>
+          <p>${festival.description}</p>
+          <p>Date: ${festival.date}</p>
+        `;
+      } else {
+        festivalDetails.innerHTML = '<p>No festivals on this date.</p>';
+      }
+    }
+
+    function animateCalendarChange(callback) {
+      calendar.classList.add('fade-out');
+      setTimeout(() => {
+        callback();
+        calendar.classList.remove('fade-out');
+      }, 500);
+    }
+
+    document.getElementById('prev-month').addEventListener('click', () => {
+      animateCalendarChange(() => {
+        currentMonth--;
+        if (currentMonth < 0) {
+          currentMonth = 11;
+          currentYear--;
+        }
+        renderCalendar();
+      });
+    });
+
+    document.getElementById('next-month').addEventListener('click', () => {
+      animateCalendarChange(() => {
+        currentMonth++;
+        if (currentMonth > 11) {
+          currentMonth = 0;
+          currentYear++;
+        }
+        renderCalendar();
+      });
+    });
+
+    document.querySelectorAll('.floating-shape').forEach(shape => {
+      shape.addEventListener('click', () => {
+        shape.style.animation = 'none';
+        shape.offsetHeight;
+        shape.style.animation = '';
+      });
+    });
+
+    renderCalendar();
+  </script>
+</body>
+</html>
