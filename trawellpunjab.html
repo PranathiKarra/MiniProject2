@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Places to Visit in Punjab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="stylesnearmadurai.css" />
+  <script>
+    function toggleReadMore(id) {
+      const dots = document.getElementById(`dots-${id}`);
+      const moreText = document.getElementById(`more-${id}`);
+      const btnText = document.getElementById(`btn-${id}`);
+
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "...read more";
+        moreText.style.display = "none";
+      } else {
+        dots.style.display = "none";
+        btnText.innerHTML = "read less";
+        moreText.style.display = "inline";
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 p-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <!-- Golden Temple -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="relative">
+        <img alt="Golden Temple Amritsar" class="w-full h-48 object-cover" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Golden_Temple%2C_Amritsar%2C_India.jpg" />
+        <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 text-xs font-bold">#1</div>
+      </div>
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Golden Temple</h2>
+        <p class="text-gray-600 text-sm mb-2">#1 of 29 Places to Visit in Punjab</p>
+        <p class="text-gray-800 text-sm mb-4">
+          The Golden Temple in Amritsar, also known as Sri Harmandir Sahib, is the holiest shrine of Sikhism. It is a beautiful marble temple overlaid with gold leaf and surrounded by the sacred Amrit Sarovar (Pool of Nectar). 
+          <span id="dots-1">...</span><span id="more-1" style="display:none;">Thousands of pilgrims visit daily to offer prayers, take a dip in the holy water, and participate in the community Langar. The temple glows beautifully at night and radiates peace and spiritual energy.</span>
+          <span id="btn-1" class="text-blue-500 cursor-pointer" onclick="toggleReadMore(1)">read more</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Jallianwala Bagh -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="relative">
+        <img alt="Jallianwala Bagh" class="w-full h-48 object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jallianwala_Bagh_Amritsar_India.jpg/640px-Jallianwala_Bagh_Amritsar_India.jpg" />
+        <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 text-xs font-bold">#2</div>
+      </div>
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Jallianwala Bagh</h2>
+        <p class="text-gray-600 text-sm mb-2">#2 of 29 Places to Visit in Amritsar</p>
+        <p class="text-gray-700 text-sm mb-4">
+          Located near the Golden Temple, Jallianwala Bagh is a historic public garden and memorial of national importance. It commemorates the tragic massacre of hundreds of Indians in 1919. 
+          <span id="dots-2">...</span><span id="more-2" style="display:none;">Visitors can still see bullet marks on the walls and the preserved well into which people jumped to escape gunfire. It serves as a poignant reminder of India's struggle for freedom.</span>
+          <span id="btn-2" class="text-blue-500 cursor-pointer" onclick="toggleReadMore(2)">read more</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Wagah Border -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="relative">
+        <img alt="Wagah Border Ceremony" class="w-full h-48 object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Wagah_Border_Ceremony.jpg/640px-Wagah_Border_Ceremony.jpg" />
+        <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 text-xs font-bold">#3</div>
+      </div>
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Wagah Border</h2>
+        <p class="text-gray-600 text-sm mb-2">#3 of 29 Places to Visit in Punjab</p>
+        <p class="text-gray-700 text-sm mb-4">
+          Located on the India–Pakistan border, the Wagah Border is famous for the Beating Retreat ceremony held every evening. Soldiers from both sides perform synchronized drills amidst cheering crowds. 
+          <span id="dots-3">...</span><span id="more-3" style="display:none;">It is a patriotic and emotionally charged experience, drawing visitors from all over the country to witness the symbolic lowering of flags.</span>
+          <span id="btn-3" class="text-blue-500 cursor-pointer" onclick="toggleReadMore(3)">read more</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Anandpur Sahib -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="relative">
+        <img alt="Anandpur Sahib" class="w-full h-48 object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Anandpur_Sahib_Gurudwara.jpg/640px-Anandpur_Sahib_Gurudwara.jpg" />
+        <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 text-xs font-bold">#4</div>
+      </div>
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Anandpur Sahib</h2>
+        <p class="text-gray-600 text-sm mb-2">#4 of 29 Places to Visit in Punjab</p>
+        <p class="text-gray-700 text-sm mb-4">
+          Anandpur Sahib, known as the birthplace of the Khalsa, is one of the most sacred places for Sikhs. It houses several important Gurdwaras and hosts the famous Hola Mohalla festival. 
+          <span id="dots-4">...</span><span id="more-4" style="display:none;">The town offers a mix of religious, historical, and architectural significance and is a must-visit for those exploring Sikh heritage.</span>
+          <span id="btn-4" class="text-blue-500 cursor-pointer" onclick="toggleReadMore(4)">read more</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Durgiana Temple -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+      <div class="relative">
+        <img alt="Durgiana Temple Amritsar" class="w-full h-48 object-cover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Durgiana_Temple_Amritsar.jpg/640px-Durgiana_Temple_Amritsar.jpg" />
+        <div class="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 text-xs font-bold">#5</div>
+      </div>
+      <div class="p-4">
+        <h2 class="text-xl font-bold mb-2">Durgiana Temple</h2>
+        <p class="text-gray-600 text-sm mb-2">#5 of 29 Places to Visit in Amritsar</p>
+        <p class="text-gray-700 text-sm mb-4">
+          Durgiana Temple, also known as Lakshmi Narayan Temple, is a Hindu temple resembling the Golden Temple. It is dedicated to Goddess Durga and features stunning marble architecture. 
+          <span id="dots-5">...</span><span id="more-5" style="display:none;">It is an important spiritual site for Hindus in Punjab and is located near the Golden Temple complex.</span>
+          <span id="btn-5" class="text-blue-500 cursor-pointer" onclick="toggleReadMore(5)">read more</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
